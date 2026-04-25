@@ -5,6 +5,8 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/lib/i18n/routing";
 import { Providers } from "@/components/Providers";
+import { LangToggle } from "@/components/LangToggle";
+import { QuotaCounter } from "@/components/QuotaCounter";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -34,7 +36,16 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${inter.variable} ${serif.variable}`}>
       <body>
         <Providers>
-          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider messages={messages}>
+            <header className="flex items-center justify-between px-5 py-3 border-b border-paper">
+              <span className="font-display italic text-sm">Hairstyle Studio</span>
+              <div className="flex items-center gap-3">
+                <QuotaCounter />
+                <LangToggle />
+              </div>
+            </header>
+            {children}
+          </NextIntlClientProvider>
         </Providers>
       </body>
     </html>
