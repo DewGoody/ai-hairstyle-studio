@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/lib/i18n/routing";
+import { Providers } from "@/components/Providers";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -32,7 +33,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} ${serif.variable}`}>
       <body>
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <Providers>
+          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        </Providers>
       </body>
     </html>
   );
