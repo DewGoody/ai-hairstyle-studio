@@ -30,6 +30,18 @@ npm run test:e2e    # Playwright (mocks Gemini)
 npm run typecheck   # tsc --noEmit
 ```
 
+## Generating preset thumbnails (one-off)
+
+The 20 hairstyle preset cards in Step 2 fall back to a coloured gradient if no thumbnail image exists. To populate real sample portraits via Gemini 2.5 Flash Image:
+
+```bash
+npm run presets:thumbs
+```
+
+The script reads `GEMINI_API_KEY` from `.env.local`, generates one PNG per preset into `public/presets/<id>.png`, throttles to 6 requests per minute (10 s between calls) to stay under Gemini's free-tier rate limit, and retries with exponential back-off on 429 responses. It is idempotent — existing files are skipped, so the script can be re-run safely to fill in failed entries.
+
+Total time for a clean run: ~3.5 minutes. Once committed, the thumbnails are static assets served from Vercel's CDN — no run-time Gemini cost.
+
 ## Deploy on Vercel
 
 1. Push the repo to GitHub.
