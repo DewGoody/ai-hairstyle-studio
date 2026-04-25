@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
+import { HistoryDrawer } from "@/components/HistoryDrawer";
 
 const MAX_BYTES = 10 * 1024 * 1024;
 
@@ -35,6 +36,9 @@ export function Step1Upload({
 
   return (
     <section>
+      <div className="flex justify-end mb-4">
+        <HistoryDrawer />
+      </div>
       <p className="text-[10px] uppercase tracking-[0.2em] text-faded mb-2">Step 1 of 3</p>
       <h1 className="font-display italic text-3xl mb-2">{t("headline")}</h1>
       <p className="text-sm text-faded mb-8">{t("sub")}</p>
