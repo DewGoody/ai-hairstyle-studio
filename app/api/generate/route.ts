@@ -74,6 +74,7 @@ export async function POST(req: Request) {
         { status: 422 },
       );
     }
+    console.error("[/api/generate] gemini failure:", err);
     return NextResponse.json(
       { error: "ai_failure", message: "Generation failed" },
       { status: 500 },

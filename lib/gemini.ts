@@ -1,4 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, Modality } from "@google/genai";
 
 const apiKey = process.env.GEMINI_API_KEY;
 
@@ -32,6 +32,9 @@ export async function generateHairstyle({ image, prompt }: GenerateArgs): Promis
         { inlineData: { mimeType, data } },
         { text: prompt },
       ],
+      config: {
+        responseModalities: [Modality.IMAGE],
+      },
     });
   } catch (err) {
     throw new GeminiFailureError((err as Error).message);

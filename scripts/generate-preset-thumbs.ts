@@ -17,7 +17,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, Modality } from "@google/genai";
 import { PRESETS, type Preset } from "../lib/presets.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -94,6 +94,9 @@ async function generateOne(preset: Preset): Promise<boolean> {
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash-image",
         contents: [{ text: prompt }],
+        config: {
+          responseModalities: [Modality.IMAGE],
+        },
       });
 
       const parts = response.candidates?.[0]?.content?.parts ?? [];
