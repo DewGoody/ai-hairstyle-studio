@@ -7,13 +7,14 @@ describe("presets", () => {
     expect(getPresetsByGender("male")).toHaveLength(10);
   });
 
-  it("each preset has bilingual label and prompt fragment", () => {
+  it("each preset has bilingual label, prompt fragment, and tint", () => {
     for (const p of PRESETS) {
       expect(p.id).toMatch(/^[a-z0-9-]+$/);
       expect(p.label.en).toBeTruthy();
       expect(p.label.th).toBeTruthy();
       expect(p.promptFragment.en).toBeTruthy();
       expect(p.promptFragment.th).toBeTruthy();
+      expect(p.tint).toMatch(/^(linear-gradient|radial-gradient|#)/);
     }
   });
 

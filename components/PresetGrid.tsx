@@ -22,13 +22,15 @@ export function PresetGrid({
           <button
             key={p.id}
             onClick={() => onSelect(p.id)}
+            style={{ background: p.tint }}
             className={
-              "aspect-square rounded-lg bg-paper relative overflow-hidden text-left " +
+              "aspect-square rounded-lg relative overflow-hidden text-left transition " +
               (active ? "outline outline-2 outline-coral outline-offset-2" : "")
             }
             aria-pressed={active}
           >
-            <span className="absolute bottom-1 left-1.5 text-[10px] text-cream drop-shadow">
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none" />
+            <span className="absolute bottom-1.5 left-2 right-2 text-[11px] text-cream font-medium leading-tight">
               {p.label[locale]}
             </span>
           </button>
