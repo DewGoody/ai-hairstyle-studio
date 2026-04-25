@@ -1,0 +1,51 @@
+{
+  "app": {
+    "title": "Hairstyle Studio",
+    "tagline": "ลองทรงผมใหม่ ฟรี"
+  },
+  "wizard": {
+    "step": "ขั้นที่ {current} จาก {total}",
+    "step1": {
+      "headline": "ส่งหน้ามาก่อน",
+      "sub": "อัพโหลดรูปชัด ๆ หันหน้าตรงจะดีที่สุด เราไม่เก็บรูปไว้ที่ไหนเลย",
+      "uploadCta": "แตะเพื่ออัพโหลด",
+      "uploadHint": "หรือลากรูปมาวางตรงนี้",
+      "fileNote": "JPG, PNG · ไม่เกิน 10MB",
+      "continue": "ถัดไป"
+    },
+    "step2": {
+      "headline": "เลือกลุคที่อยาก",
+      "back": "ย้อนกลับ",
+      "generate": "สร้างเลย",
+      "gender": { "female": "หญิง", "male": "ชาย" },
+      "labels": { "style": "ทรงผม", "color": "สี", "custom": "ปรับเอง (ไม่จำเป็น)" },
+      "customPlaceholder": "เช่น มีหน้าม้าซีทรู"
+    },
+    "step3": {
+      "headline": "นี่คือคุณ",
+      "compareHint": "ลากตัวจับเพื่อเปรียบเทียบ",
+      "save": "บันทึก",
+      "share": "แชร์",
+      "tryAgain": "ลองใหม่",
+      "startOver": "เริ่มใหม่"
+    }
+  },
+  "quota": {
+    "remaining": "เหลือ {remaining} / {total} ครั้ง",
+    "exhausted": "วันนี้เต็มแล้ว กลับมาพรุ่งนี้นะ",
+    "resetsIn": "รีเซ็ตใน {hours} ชม. {minutes} นาที"
+  },
+  "errors": {
+    "imageTooLarge": "รูปต้องไม่เกิน 10MB",
+    "fileType": "JPG หรือ PNG เท่านั้น",
+    "noFace": "ไม่เจอใบหน้าในรูป ลองรูปอื่นนะ",
+    "aiFailure": "สร้างไม่สำเร็จ ลองใหม่อีกครั้ง",
+    "network": "เน็ตมีปัญหา ลองใหม่",
+    "rateLimited": "วันนี้ใช้ครบโควต้าแล้ว"
+  },
+  "history": {
+    "title": "ลุคที่เคยลอง",
+    "empty": "ลุคที่คุณเคยลองจะมาอยู่ตรงนี้",
+    "open": "ดูล่าสุด"
+  }
+}

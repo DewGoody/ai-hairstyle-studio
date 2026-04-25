@@ -1,0 +1,51 @@
+{
+  "app": {
+    "title": "Hairstyle Studio",
+    "tagline": "Try a new hairstyle, free."
+  },
+  "wizard": {
+    "step": "Step {current} of {total}",
+    "step1": {
+      "headline": "Bring your face.",
+      "sub": "Upload a clear photo — front-facing works best. We don't store anything.",
+      "uploadCta": "Tap to upload",
+      "uploadHint": "or drop a photo here",
+      "fileNote": "JPG, PNG · max 10MB",
+      "continue": "Continue"
+    },
+    "step2": {
+      "headline": "Choose your look.",
+      "back": "Back",
+      "generate": "Generate",
+      "gender": { "female": "Female", "male": "Male" },
+      "labels": { "style": "Style", "color": "Color", "custom": "Custom (optional)" },
+      "customPlaceholder": "e.g. with side bangs"
+    },
+    "step3": {
+      "headline": "Here you are.",
+      "compareHint": "Drag the handle to compare",
+      "save": "Save",
+      "share": "Share",
+      "tryAgain": "Try again",
+      "startOver": "Start over"
+    }
+  },
+  "quota": {
+    "remaining": "{remaining} / {total} left",
+    "exhausted": "Daily limit reached. Come back tomorrow.",
+    "resetsIn": "Resets in {hours}h {minutes}m"
+  },
+  "errors": {
+    "imageTooLarge": "Image must be under 10MB",
+    "fileType": "JPG or PNG only",
+    "noFace": "No face detected — try another photo",
+    "aiFailure": "Generation failed. Please try again.",
+    "network": "Network error. Please retry.",
+    "rateLimited": "You've reached today's limit."
+  },
+  "history": {
+    "title": "Recent looks",
+    "empty": "Your past tries will appear here",
+    "open": "Recent"
+  }
+}
